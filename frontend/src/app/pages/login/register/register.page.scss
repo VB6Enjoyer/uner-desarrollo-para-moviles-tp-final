@@ -1,0 +1,39 @@
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .profile-image-container {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-image-container:hover .profile-image {
+    transform: scale(1.1);
+  }
+  
+  .profile-image-container ion-button {
+    margin-top: 10px;
+  }
+  
+  .form-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 3%;
+  }
+  

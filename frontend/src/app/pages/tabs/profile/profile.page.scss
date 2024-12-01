@@ -1,0 +1,79 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centrar horizontalmente
+  justify-content: center; // Centrar verticalmente
+  height: 100vh; // Ocupar toda la altura de la pantalla
+  padding: 20px;
+  max-width: 100%; // No debe limitarse el ancho total
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 150px; // Tamaño medio, no ocupa todo el ancho
+  height: 150px;
+  margin-bottom: 20px; // Separar el avatar del botón
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centrar el contenido del perfil
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.edit-button {
+  font-size: 1rem;
+  color: #007bff;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.save-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.form-container ion-label {
+  padding-bottom: 1.3vh;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .profile-avatar {
+    width: 120px; // Reducir el tamaño en pantallas pequeñas
+    height: 120px;
+  }
+
+  .profile-container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .edit-button {
+    font-size: 0.9rem;
+  }
+}

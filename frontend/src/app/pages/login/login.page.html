@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="green">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+  <div class="form-container"> 
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input required type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input required type="password" formControlName="password">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+
+      <div class="buttons-container">
+        <ion-button expand="block" type="submit" [disabled]="loginForm.invalid" class="login-button">Iniciar Sesión</ion-button>
+        
+        <div class="register-container">
+          <p class="register-text">¿No tienes una cuenta?</p>
+          <ion-button expand="block" fill="clear" color="primary" (click)="goToRegister()" class="register-button">Regístrate</ion-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <p>© Derechos reservados 2024</p>
+</ion-footer>

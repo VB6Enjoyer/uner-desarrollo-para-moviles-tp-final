@@ -1,0 +1,15 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root {
+    --background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    --background-position: center center; /* Centra la imagen de fondo */
+    --background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+  }
+
+:root   {
+    --background: rgb(204,204,204);
+    --background: -moz-linear-gradient(176deg, rgba(204,204,204,1) 0%, rgba(130,206,221,1) 99%);
+    --background: -webkit-linear-gradient(176deg, rgba(204,204,204,1) 0%, rgba(130,206,221,1) 99%);
+    --background: linear-gradient(176deg, rgba(204,204,204,1) 0%, rgba(130,206,221,1) 99%);
+    --filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc",endColorstr="#82cedd",GradientType=1);
+}

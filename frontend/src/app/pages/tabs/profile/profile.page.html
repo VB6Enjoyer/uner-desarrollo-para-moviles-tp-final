@@ -1,0 +1,77 @@
+<ion-content>
+  <ng-container *ngIf="showImageUpload"></ng-container>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="profile-container">
+    <ng-container *ngIf="!isEditing">
+      <ion-item lines="none" class="avatar-container">
+        <ion-avatar class="profile-avatar">
+          <img
+            [src]="userProfile?.imagen ? 'data:image/jpeg;base64,' + userProfile?.imagen : 'https://ionicframework.com/docs/img/demos/avatar.svg'"
+            alt="Imagen de Perfil" />
+        </ion-avatar>
+        <div class="profile-info">
+          <h2 class="profile-name">{{ userProfile?.username }}</h2>
+          <ion-label>{{ userProfile?.nombre }}</ion-label>
+          <ion-label>{{ userProfile?.email }}</ion-label>
+          <ion-label>{{ userProfile?.bio }}</ion-label>
+        </div>
+      </ion-item>
+
+      <ion-button class="edit-button" expand="block" fill="clear" (click)="isEditing = true">Editar Perfil</ion-button>
+    </ng-container>
+
+    <ng-container *ngIf="isEditing">
+      <form [formGroup]="profileForm" (ngSubmit)="onSaveProfile()" class="form-container">
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="text" placeholder="Ingresa tu nombre de usuario" formControlName="username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" placeholder="Ingresa tu nombre" formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Biografía</ion-label>
+          <ion-textarea placeholder="Me gusta..." formControlName="bio"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" placeholder="address@mail.com" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar password</ion-label>
+          <ion-input type="password" placeholder="Confimar password" formControlName="confirmPassword"></ion-input>
+        </ion-item>
+
+        <!-- Botón para tomar una foto o cargar una imagen desde la galería -->
+        <ion-item class="ion-padding">
+          <ion-button (click)="takePicture()">Tomar foto</ion-button>
+
+          <div *ngIf="photo">
+            <img [src]="photo" />
+          </div>
+        </ion-item>
+
+        <!-- Queda añadir un item dropdown para editar roles -->
+
+        <ion-button expand="block" type="submit" class="save-button">Guardar Perfil</ion-button>
+        <ion-button expand="block" fill="clear" (click)="isEditing = false">Cancelar</ion-button>
+      </form>
+    </ng-container>
+  </div>
+</ion-content>

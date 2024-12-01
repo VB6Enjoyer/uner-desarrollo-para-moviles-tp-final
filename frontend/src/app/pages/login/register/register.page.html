@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form class="form-container" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username" required></ion-input>
+    </ion-item>
+    <ion-note *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" color="danger">
+      El nombre de usuario es obligatorio y debe tener al menos 4 caracteres.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email" required></ion-input>
+    </ion-item>
+    <ion-note *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" color="danger">
+      Por favor, introduce un email válido.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password" required></ion-input>
+    </ion-item>
+    <ion-note *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" color="danger">
+      La contraseña es obligatoria y debe tener al menos 4 caracteres.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar contraseña</ion-label>
+      <ion-input type="password" formControlName="confirmPassword" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">Registrarse</ion-button>
+  </form>
+</ion-content>
