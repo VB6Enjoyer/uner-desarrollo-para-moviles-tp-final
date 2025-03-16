@@ -1,0 +1,13 @@
+diff --git a/node_modules/@capacitor/google-maps/dist/typings/definitions.d.ts b/node_modules/@capacitor/google-maps/dist/typings/definitions.d.ts
+index 1e3ed04..4634453 100644
+--- a/node_modules/@capacitor/google-maps/dist/typings/definitions.d.ts
++++ b/node_modules/@capacitor/google-maps/dist/typings/definitions.d.ts
+@@ -156,7 +156,7 @@ export interface GoogleMapConfig extends google.maps.MapOptions {
+      *
+      * @since 4.3.0
+      */
+-    styles?: google.maps.MapTypeStyle[] | null;
++    styles?: google.maps.MapTypeStyle[] | undefined;
+     /**
+      * A map id associated with a specific map style or feature.
+      *
