@@ -7,11 +7,11 @@ import { JwtModule } from '@nestjs/jwt';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'username',
-      password: 'password',
-      database: 'desarrollo_movil',
+      host: process.env.DB_HOST || 'localhost',
+      port: Number(process.env.DB_PORT) || 3306,
+      username: process.env.DB_USERNAME || "username",
+      password: process.env.DB_PASSWORD || 'password',
+      database: process.env.DB_DATABASE || 'desarrollo_movil',
       autoLoadEntities: true,
       synchronize: false,
       logger: 'advanced-console'
