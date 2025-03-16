@@ -8,13 +8,13 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { handleError } from '../../helpers';
 import { UserDto } from '../../dtos/usuario.dto';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  private apiUrl = "http://localhost:3000/api/usuarios";
+  private apiUrl = `${environment.API_URL}/api/usuarios`;
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
