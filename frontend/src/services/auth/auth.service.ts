@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<{ token: string, idUsuario: number }> {
-    const response = this.client.post<{ token: string, idUsuario: number }>('http://localhost:3000/api/auth/login', {
+    const response = this.client.post<{ token: string, idUsuario: number }>(`${environment.API_URL}/api/auth/login`, {
       email,
       password,
     }).pipe(
