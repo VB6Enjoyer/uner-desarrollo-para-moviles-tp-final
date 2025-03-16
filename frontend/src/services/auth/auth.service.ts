@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<{ token: string, idUsuario: number }> {
-    const response = this.client.post<{ token: string, idUsuario: number }>(`${environment.API_URL}/api/auth/login`, {
+    const response = this.client.post<{ token: string, idUsuario: number }>(environment.API_URL + '/api/auth/login', {
       email,
       password,
     }).pipe(
@@ -50,7 +50,7 @@ export class AuthService {
   }
 
   register(username: string, email: string, password: string): Observable<{ token: string }> {
-    return this.client.post<{ token: string }>('http://localhost:3000/api/usuarios', {
+    return this.client.post<{ token: string }>(`${environment.API_URL}/api/usuarios`, {
       username,
       email,
       password,
@@ -59,7 +59,7 @@ export class AuthService {
   }
 
   updateProfile(profileData: { username?: string, password?: string, nombre?: string, email?: string, imagen?: string, bio?: string, rol?: string }): Observable<any> {
-    return this.client.put('http://localhost:3000/api/usuarios', profileData);
+    return this.client.put(`${environment.API_URL}/api/usuarios`, profileData);
   }
 
   logout() {
